@@ -1,0 +1,95 @@
+{
+  "table_name": "u_incident_workflow",
+  "label": "Incident Workflow",
+  "extends": "task",
+  "scope": "global",
+  "auto_number": {
+    "prefix": "TKT",
+    "number": 10001,
+    "digits": 7
+  },
+  "fields": [
+    {
+      "column_name": "number",
+      "label": "Number",
+      "type": "string",
+      "max_length": 40,
+      "read_only": true,
+      "mandatory": false
+    },
+    {
+      "column_name": "caller_id",
+      "label": "Caller",
+      "type": "reference",
+      "reference_table": "sys_user",
+      "mandatory": true
+    },
+    {
+      "column_name": "category",
+      "label": "Category",
+      "type": "choice",
+      "mandatory": false,
+      "choices": [
+        { "label": "Network", "value": "Network", "sequence": 10 },
+        { "label": "Hardware", "value": "Hardware", "sequence": 20 },
+        { "label": "Access", "value": "Access", "sequence": 30 },
+        { "label": "Performance", "value": "Performance", "sequence": 40 }
+      ]
+    },
+    {
+      "column_name": "subcategory",
+      "label": "Subcategory",
+      "type": "choice",
+      "use_dependent_field": true,
+      "dependent_on_field": "category",
+      "mandatory": false,
+      "choices": [
+        { "label": "Wi-Fi", "value": "Wi-Fi", "dependent_value": "Network", "sequence": 10 },
+        { "label": "Projector", "value": "Projector", "dependent_value": "Hardware", "sequence": 10 },
+        { "label": "Forgot Password", "value": "Forgot Password", "dependent_value": "Access", "sequence": 10 },
+        { "label": "Slow computer", "value": "Slow computer", "dependent_value": "Performance", "sequence": 10 }
+      ]
+    },
+    {
+      "column_name": "short_description",
+      "label": "Short description",
+      "type": "string",
+      "max_length": 160,
+      "mandatory": true
+    },
+    {
+      "column_name": "description",
+      "label": "Description",
+      "type": "string",
+      "max_length": 4000,
+      "mandatory": false
+    },
+    {
+      "column_name": "state",
+      "label": "State",
+      "type": "choice",
+      "default_value": "1",
+      "choices": [
+        { "label": "New", "value": "1" },
+        { "label": "In Progress", "value": "2" },
+        { "label": "On Hold", "value": "3" },
+        { "label": "Resolved", "value": "6" },
+        { "label": "Closed", "value": "7" }
+      ]
+    },
+    {
+      "column_name": "assignment_group",
+      "label": "Assignment group",
+      "type": "reference",
+      "reference_table": "sys_user_group",
+      "mandatory": false
+    },
+    {
+      "column_name": "assigned_to",
+      "label": "Assigned to",
+      "type": "reference",
+      "reference_table": "sys_user",
+      "mandatory": false
+    }
+  ]
+}

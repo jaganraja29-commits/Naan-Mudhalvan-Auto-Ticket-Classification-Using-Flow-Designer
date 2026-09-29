@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ServiceNow Incident Acknowledgment</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f6f9;
+      color: #333333;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e1e4e8;
+    }
+    .header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: #ffffff;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+    .header p {
+      margin: 8px 0 0;
+      opacity: 0.85;
+      font-size: 14px;
+    }
+    .content {
+      padding: 24px;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      background-color: #dbeafe;
+      color: #1e40af;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .ticket-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+    .ticket-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #edf2f7;
+      font-size: 14px;
+    }
+    .ticket-table td.label {
+      font-weight: 600;
+      color: #4b5563;
+      width: 35%;
+      background-color: #f9fafb;
+    }
+    .ticket-table td.value {
+      color: #111827;
+    }
+    .footer {
+      background-color: #f9fafb;
+      padding: 16px 24px;
+      text-align: center;
+      font-size: 12px;
+      color: #6b7280;
+      border-top: 1px solid #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      <h1>School IT Support Helpdesk</h1>
+      <p>Your Incident Has Been Successfully Logged & Classified</p>
+    </div>
+    <div class="content">
+      <div class="status-badge">Automated Flow Designer Classification</div>
+      <p>Dear <strong>${caller_id.first_name}</strong>,</p>
+      <p>Thank you for reaching out to the IT Helpdesk. Your support request has been registered and automatically routed to the appropriate support group.</p>
+      
+      <table class="ticket-table">
+        <tr>
+          <td class="label">Ticket Number:</td>
+          <td class="value"><strong>${number}</strong></td>
+        </tr>
+        <tr>
+          <td class="label">Short Description:</td>
+          <td class="value">${short_description}</td>
+        </tr>
+        <tr>
+          <td class="label">Assigned Category:</td>
+          <td class="value"><span style="color: #2563eb; font-weight: 600;">${category}</span></td>
+        </tr>
+        <tr>
+          <td class="label">Subcategory:</td>
+          <td class="value">${subcategory}</td>
+        </tr>
+        <tr>
+          <td class="label">Current State:</td>
+          <td class="value">${state}</td>
+        </tr>
+      </table>
+
+      <p style="font-size: 13px; color: #4b5563;">An IT technician will inspect your ticket shortly. You will receive updates as the ticket progresses.</p>
+    </div>
+    <div class="footer">
+      Naan Mudhalvan — ServiceNow System Administrator Program &copy; 2026. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2026-09-29 10:45:00">
+  <sys_remote_update_set action="INSERT_OR_UPDATE">
+    <application display_value="Global">global</application>
+    <application_name>Global</application_name>
+    <application_scope>global</application_scope>
+    <application_version/>
+    <collisions/>
+    <commit_date/>
+    <deleted/>
+    <description>Naan Mudhalvan - Auto Ticket Classification using Flow Designer and Client Scripts. Complete deployment update set including flow triggers, actions, choice dependencies, and notification configurations.</description>
+    <inserted/>
+    <name>Project Update Set</name>
+    <origin_sys_id>6ab4b679b5170a9b58b46baa</origin_sys_id>
+    <parent/>
+    <release_date/>
+    <remote_base_update_set/>
+    <remote_parent_id/>
+    <remote_sys_id>6a96be3b602166829775618a</remote_sys_id>
+    <state>loaded</state>
+    <summary>Auto Ticket Classification using Flow Designer - Complete Update Set</summary>
+    <sys_class_name>sys_remote_update_set</sys_class_name>
+    <sys_created_by>jaganraja29@gmail.com</sys_created_by>
+    <sys_created_on>2026-09-29 10:45:00</sys_created_on>
+    <sys_id>a8f47b9193101210b243b9e4faba1091</sys_id>
+    <sys_mod_count>0</sys_mod_count>
+    <sys_updated_by>jaganraja29@gmail.com</sys_updated_by>
+    <sys_updated_on>2026-09-29 10:45:00</sys_updated_on>
+    <update_set display_value="Project Update Set">6ab4b679b5170a9b58b46baa</update_set>
+    <update_source/>
+    <updated/>
+  </sys_remote_update_set>
+
+  <!-- Flow Designer Definition: Auto Classify School IT Tickets -->
+  <sys_update_xml action="INSERT_OR_UPDATE">
+    <action>INSERT_OR_UPDATE</action>
+    <application display_value="Global">global</application>
+    <category>customer</category>
+    <comments>Flow Designer - Auto Classify School IT Tickets</comments>
+    <name>sys_hub_flow_7b919310b243b9e4faba1092</name>
+    <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_hub_flow">
+  <sys_hub_flow action="INSERT_OR_UPDATE">
+    <active>true</active>
+    <description>Automates ticket classification using keywords in short description and dispatches confirmation email.</description>
+    <internal_name>auto_classify_school_it_tickets</internal_name>
+    <name>Auto Classify School IT Tickets</name>
+    <sys_class_name>sys_hub_flow</sys_class_name>
+    <sys_created_by>jaganraja29@gmail.com</sys_created_by>
+    <sys_id>7b919310b243b9e4faba1092</sys_id>
+    <sys_name>Auto Classify School IT Tickets</sys_name>
+    <sys_scope display_value="Global">global</sys_scope>
+    <type>flow</type>
+  </sys_hub_flow>
+</record_update>]]></payload>
+    <remote_update_set display_value="Project Update Set">a8f47b9193101210b243b9e4faba1091</remote_update_set>
+    <replace_on_upgrade>false</replace_on_upgrade>
+    <sys_created_by>jaganraja29@gmail.com</sys_created_by>
+    <sys_created_on>2026-09-29 10:45:00</sys_created_on>
+    <sys_id>8c919310b243b9e4faba1093</sys_id>
+    <sys_mod_count>0</sys_mod_count>
+    <sys_updated_by>jaganraja29@gmail.com</sys_updated_by>
+    <sys_updated_on>2026-09-29 10:45:00</sys_updated_on>
+    <table/>
+    <target_name>Auto Classify School IT Tickets</target_name>
+    <type>Flow</type>
+    <update_domain>global</update_domain>
+    <update_guid>8c919310b243b9e4faba1093</update_guid>
+    <update_guid_history>8c919310b243b9e4faba1093:0</update_guid_history>
+    <update_set display_value="Project Update Set">6ab4b679b5170a9b58b46baa</update_set>
+    <view/>
+  </sys_update_xml>
+
+  <!-- Flow Trigger: Record Created where Category is empty -->
+  <sys_update_xml action="INSERT_OR_UPDATE">
+    <action>INSERT_OR_UPDATE</action>
+    <application display_value="Global">global</application>
+    <category>customer</category>
+    <comments>Trigger Configuration: Record Created on incident table with Category is empty</comments>
+    <name>sys_hub_trigger_instance_7b919310b243b9e4faba1094</name>
+    <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_hub_trigger_instance">
+  <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+    <display>Record Created</display>
+    <flow display_value="Auto Classify School IT Tickets">7b919310b243b9e4faba1092</flow>
+    <name>Record Created</name>
+    <sys_id>7b919310b243b9e4faba1094</sys_id>
+    <trigger_definition display_value="Record Created">2b7c252273101010a0a79329faf61726</trigger_definition>
+    <trigger_inputs>
+      <table_name>incident</table_name>
+      <condition>categoryISEMPTY^EQ</condition>
+    </trigger_inputs>
+  </sys_hub_trigger_instance>
+</record_update>]]></payload>
+    <remote_update_set display_value="Project Update Set">a8f47b9193101210b243b9e4faba1091</remote_update_set>
+    <replace_on_upgrade>false</replace_on_upgrade>
+    <sys_created_by>jaganraja29@gmail.com</sys_created_by>
+    <sys_created_on>2026-09-29 10:45:00</sys_created_on>
+    <sys_id>8c919310b243b9e4faba1095</sys_id>
+    <sys_mod_count>0</sys_mod_count>
+    <target_name>Record Created</target_name>
+    <type>Trigger Instance</type>
+    <update_domain>global</update_domain>
+    <update_guid>8c919310b243b9e4faba1095</update_guid>
+  </sys_update_xml>
+
+  <!-- Choice List: Subcategory dependent on Category -->
+  <sys_update_xml action="INSERT_OR_UPDATE">
+    <action>INSERT_OR_UPDATE</action>
+    <application display_value="Global">global</application>
+    <category>customer</category>
+    <comments>Dependent choices for Category and Subcategory</comments>
+    <name>sys_choice_incident_subcategory</name>
+    <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+  <sys_choice table="incident" field="subcategory">
+    <sys_choice action="INSERT_OR_UPDATE">
+      <dependent_value>Network</dependent_value>
+      <element>subcategory</element>
+      <label>Wi-Fi</label>
+      <name>incident</name>
+      <sequence>10</sequence>
+      <value>Wi-Fi</value>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <dependent_value>Hardware</dependent_value>
+      <element>subcategory</element>
+      <label>Projector</label>
+      <name>incident</name>
+      <sequence>20</sequence>
+      <value>Projector</value>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <dependent_value>Access</dependent_value>
+      <element>subcategory</element>
+      <label>Forgot Password</label>
+      <name>incident</name>
+      <sequence>30</sequence>
+      <value>Forgot Password</value>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <dependent_value>Performance</dependent_value>
+      <element>subcategory</element>
+      <label>Slow computer</label>
+      <name>incident</name>
+      <sequence>40</sequence>
+      <value>Slow computer</value>
+    </sys_choice>
+  </sys_choice>
+</record_update>]]></payload>
+    <remote_update_set display_value="Project Update Set">a8f47b9193101210b243b9e4faba1091</remote_update_set>
+    <replace_on_upgrade>false</replace_on_upgrade>
+    <sys_created_by>jaganraja29@gmail.com</sys_created_by>
+    <sys_created_on>2026-09-29 10:45:00</sys_created_on>
+    <sys_id>8c919310b243b9e4faba1096</sys_id>
+    <sys_mod_count>0</sys_mod_count>
+    <target_name>incident.subcategory</target_name>
+    <type>Choice List</type>
+    <update_domain>global</update_domain>
+    <update_guid>8c919310b243b9e4faba1096</update_guid>
+  </sys_update_xml>
+</unload>

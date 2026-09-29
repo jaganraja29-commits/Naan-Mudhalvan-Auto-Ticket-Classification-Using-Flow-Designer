@@ -1,0 +1,42 @@
+{
+  "dependent_configuration": {
+    "parent_field": "category",
+    "child_field": "subcategory",
+    "table": "u_incident_workflow",
+    "mappings": [
+      {
+        "category": "Network",
+        "allowed_subcategories": [
+          { "label": "Wi-Fi", "value": "Wi-Fi" },
+          { "label": "LAN Cable", "value": "LAN Cable" },
+          { "label": "DNS/DHCP", "value": "DNS/DHCP" }
+        ]
+      },
+      {
+        "category": "Hardware",
+        "allowed_subcategories": [
+          { "label": "Projector", "value": "Projector" },
+          { "label": "Monitor", "value": "Monitor" },
+          { "label": "Keyboard/Mouse", "value": "Keyboard/Mouse" },
+          { "label": "Printer", "value": "Printer" }
+        ]
+      },
+      {
+        "category": "Access",
+        "allowed_subcategories": [
+          { "label": "Forgot Password", "value": "Forgot Password" },
+          { "label": "Account Lockout", "value": "Account Lockout" },
+          { "label": "Permission Request", "value": "Permission Request" }
+        ]
+      },
+      {
+        "category": "Performance",
+        "allowed_subcategories": [
+          { "label": "Slow computer", "value": "Slow computer" },
+          { "label": "Application Freeze", "value": "Application Freeze" },
+          { "label": "High RAM/CPU Usage", "value": "High RAM/CPU Usage" }
+        ]
+      }
+    ]
+  }
+}

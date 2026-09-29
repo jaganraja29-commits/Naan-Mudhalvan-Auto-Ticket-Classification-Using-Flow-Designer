@@ -1,0 +1,137 @@
+{
+  "flow_name": "Auto Classify School IT Tickets",
+  "internal_name": "auto_classify_school_it_tickets",
+  "application": "Global",
+  "status": "Active",
+  "description": "Automated ticket categorization and notification pipeline for educational helpdesk using keyword triggers.",
+  "trigger": {
+    "type": "record_created",
+    "table": "u_incident_workflow",
+    "filter_condition": "categoryISEMPTY^EQ",
+    "run_when": "Record is inserted"
+  },
+  "flow_logic": [
+    {
+      "step": 1,
+      "type": "if",
+      "label": "SD is Wifi or Network",
+      "conditions": [
+        {
+          "field": "short_description",
+          "operator": "CONTAINS",
+          "value": "Wi-Fi"
+        },
+        {
+          "logical_operator": "OR",
+          "field": "short_description",
+          "operator": "CONTAINS",
+          "value": "Network"
+        }
+      ],
+      "actions": [
+        {
+          "action_name": "Update Record",
+          "target": "Trigger -> Record",
+          "values": {
+            "category": "Network",
+            "subcategory": "Wi-Fi"
+          }
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "type": "else_if",
+      "label": "SD is Projector or Hardware",
+      "conditions": [
+        {
+          "field": "short_description",
+          "operator": "CONTAINS",
+          "value": "Projector"
+        },
+        {
+          "logical_operator": "OR",
+          "field": "short_description",
+          "operator": "CONTAINS",
+          "value": "Hardware"
+        }
+      ],
+      "actions": [
+        {
+          "action_name": "Update Record",
+          "target": "Trigger -> Record",
+          "values": {
+            "category": "Hardware",
+            "subcategory": "Projector"
+          }
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "type": "else_if",
+      "label": "SD is Forgot password or Access",
+      "conditions": [
+        {
+          "field": "short_description",
+          "operator": "CONTAINS",
+          "value": "Forgot password"
+        },
+        {
+          "logical_operator": "OR",
+          "field": "short_description",
+          "operator": "CONTAINS",
+          "value": "Password"
+        }
+      ],
+      "actions": [
+        {
+          "action_name": "Update Record",
+          "target": "Trigger -> Record",
+          "values": {
+            "category": "Access",
+            "subcategory": "Forgot Password"
+          }
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "type": "else_if",
+      "label": "SD is Slow Computer or Performance",
+      "conditions": [
+        {
+          "field": "short_description",
+          "operator": "CONTAINS",
+          "value": "Slow Computer"
+        },
+        {
+          "logical_operator": "OR",
+          "field": "short_description",
+          "operator": "CONTAINS",
+          "value": "Performance"
+        }
+      ],
+      "actions": [
+        {
+          "action_name": "Update Record",
+          "target": "Trigger -> Record",
+          "values": {
+            "category": "Performance",
+            "subcategory": "Slow computer"
+          }
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "type": "action",
+      "action_name": "Send Email",
+      "inputs": {
+        "to": "Trigger -> Record.caller_id.email",
+        "subject": "Your Request for the issue has been submitted.",
+        "body_html_template": "flow_designer/email_templates/caller_ticket_creation_notification.html"
+      }
+    }
+  ]
+}

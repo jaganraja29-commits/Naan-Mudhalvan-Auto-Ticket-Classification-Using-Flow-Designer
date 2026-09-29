@@ -1,0 +1,58 @@
+[
+  {
+    "id": "TC-01",
+    "caller": "abel.tuter@example.com",
+    "short_description": "WiFi not working in library",
+    "expected_category": "Network",
+    "expected_subcategory": "Wi-Fi"
+  },
+  {
+    "id": "TC-02",
+    "caller": "beth.anglin@example.com",
+    "short_description": "Projector not turning on in Hall B",
+    "expected_category": "Hardware",
+    "expected_subcategory": "Projector"
+  },
+  {
+    "id": "TC-03",
+    "caller": "david.loo@example.com",
+    "short_description": "Student forgot password for portal access",
+    "expected_category": "Access",
+    "expected_subcategory": "Forgot Password"
+  },
+  {
+    "id": "TC-04",
+    "caller": "fred.luddy@example.com",
+    "short_description": "Slow computer in engineering computer lab 4",
+    "expected_category": "Performance",
+    "expected_subcategory": "Slow computer"
+  },
+  {
+    "id": "TC-05",
+    "caller": "george.bailey@example.com",
+    "short_description": "Campus Wi-Fi connectivity intermittent",
+    "expected_category": "Network",
+    "expected_subcategory": "Wi-Fi"
+  },
+  {
+    "id": "TC-06",
+    "caller": "howard.johnson@example.com",
+    "short_description": "Auditorium projector lamp failure",
+    "expected_category": "Hardware",
+    "expected_subcategory": "Projector"
+  },
+  {
+    "id": "TC-07",
+    "caller": "ian.malcolm@example.com",
+    "short_description": "Unable to login, need password reset",
+    "expected_category": "Access",
+    "expected_subcategory": "Forgot Password"
+  },
+  {
+    "id": "TC-08",
+    "caller": "julia.roberts@example.com",
+    "short_description": "Workstation freezing and sluggish performance",
+    "expected_category": "Performance",
+    "expected_subcategory": "Slow computer"
+  }
+]

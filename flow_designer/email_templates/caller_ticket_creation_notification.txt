@@ -1,0 +1,18 @@
+Subject: Your Request for the issue has been submitted.
+
+Dear ${caller_id.first_name},
+
+Thank you for contacting the School IT Helpdesk. Your ticket has been received and automatically categorized via ServiceNow Flow Designer.
+
+Ticket Details:
+- Number: ${number}
+- Short Description: ${short_description}
+- Category: ${category}
+- Subcategory: ${subcategory}
+- Status: ${state}
+
+Our technical support team is reviewing your ticket and will update you shortly.
+
+Regards,
+School IT Helpdesk
+Naan Mudhalvan — ServiceNow System Administration Program

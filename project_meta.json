@@ -1,0 +1,65 @@
+{
+  "project_title": "Auto Ticket Classification Using Flow Designer",
+  "program": "Naan Mudhalvan — ServiceNow System Administrator",
+  "domain": "Education & IT Service Management (ITSM)",
+  "student": {
+    "name": "Jagan R",
+    "email": "jaganraja29@gmail.com",
+    "github_username": "jaganraja29-commits",
+    "github_repo": "https://github.com/jaganraja29-commits/Naan-Mudhalvan-Auto-Ticket-Classification-Using-Flow-Designer"
+  },
+  "skillwallet": {
+    "platform": "myskillwallet.ai",
+    "project_id": "6a96be3b602166829775618a",
+    "subscription_id": "6ab4b679b5170a9b58b46baa",
+    "module_slug": "servicenow-system-administrator-nm-eng-6a69e3438beabdd402737035",
+    "progress": "100%",
+    "kanban_status": "12/12 Completed",
+    "epics": [
+      {
+        "id": "6a96be3b602166829775618c",
+        "name": "Milestone 1: Requirement Analysis & Planning",
+        "status": "Completed",
+        "progress": 100
+      },
+      {
+        "id": "6a96be3b6021668297756190",
+        "name": "Milestone 2: Backend Development & Configuration",
+        "status": "Completed",
+        "progress": 100
+      },
+      {
+        "id": "6a96be3b6021668297756194",
+        "name": "Milestone 3: Automation using Flow Designer & Email Notification",
+        "status": "Completed",
+        "progress": 100
+      },
+      {
+        "id": "6a96be3b6021668297756196",
+        "name": "Milestone 4: Testing, Validation & Security",
+        "status": "Completed",
+        "progress": 100
+      },
+      {
+        "id": "6a96be3b602166829775619a",
+        "name": "Milestone 5: Deployment & Conclusion",
+        "status": "Completed",
+        "progress": 100
+      }
+    ]
+  },
+  "technology_stack": {
+    "platform": "ServiceNow",
+    "release": "Washington DC / Xanadu",
+    "core_features": [
+      "Flow Designer",
+      "Process Automation Engine",
+      "Data Dictionary & Table Schema",
+      "Dependent Choice Lists",
+      "Email Notifications",
+      "Client Scripts (onChange, onSubmit, onCellEdit)",
+      "UI Policies",
+      "Update Sets XML Export"
+    ]
+  }
+}
